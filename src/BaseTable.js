@@ -769,7 +769,11 @@ class BaseTable extends React.PureComponent {
   // for dynamic row height
   _getRowHeight(rowIndex) {
     const { estimatedRowHeight, rowKey } = this.props;
-    return this._rowHeightMap[this._data[rowIndex][rowKey]] || estimatedRowHeight;
+    if (this._data[rowIndex]) {
+      return this._rowHeightMap[this._data[rowIndex][rowKey]] || estimatedRowHeight;
+    } else {
+      return estimatedRowHeight;
+    }
   }
 
   _getIsResetting() {
