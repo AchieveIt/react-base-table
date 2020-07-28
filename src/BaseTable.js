@@ -204,6 +204,7 @@ class BaseTable extends React.PureComponent {
     this.table && this.table.forceUpdateTable();
     this.leftTable && this.leftTable.forceUpdateTable();
     this.rightTable && this.rightTable.forceUpdateTable();
+    this.forceUpdate();
   }
 
   /**
